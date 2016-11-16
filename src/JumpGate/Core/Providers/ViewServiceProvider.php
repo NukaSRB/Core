@@ -24,7 +24,7 @@ class ViewServiceProvider extends ServiceProvider
     public function boot()
     {
         $this->publishes([
-            __DIR__ . '/../../../config/view-routing.php' => config_path('view-routing.php'),
+            __DIR__ . '/../../../config/view-routing.php' => config_path('jumpgate/view-routing.php'),
         ]);
     }
 
