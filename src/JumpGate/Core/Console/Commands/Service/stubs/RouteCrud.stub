@@ -1,0 +1,63 @@
+<?php
+
+namespace NAMESPACE\Http\Routes;
+
+use JumpGate\Core\Contracts\Routes;
+use JumpGate\Core\Providers\Routes as BaseRoutes;
+use Illuminate\Routing\Router;
+
+class CLASS extends BaseRoutes implements Routes
+{
+    public function namespacing()
+    {
+        return 'NAMESPACE\Http\Controllers';
+    }
+
+    public function prefix()
+    {
+        return $this->getContext('default') . '/LOWER_SERVICE/LOWER_NAME';
+    }
+
+    public function middleware()
+    {
+        return [
+            'web',
+        ];
+    }
+
+    public function patterns()
+    {
+        return [
+            'id' => '[0-9]+',
+        ];
+    }
+
+    public function routes(Router $router)
+    {
+        $router->get('{id}')
+               ->name('LOWER_SERVICE.LOWER_NAME.show')
+               ->uses('CLASS@show');
+
+        $router->get('create')
+               ->name('LOWER_SERVICE.LOWER_NAME.create')
+               ->uses('CLASS@create');
+        $router->post('create')
+               ->name('LOWER_SERVICE.LOWER_NAME.create')
+               ->uses('CLASS@store');
+
+        $router->get('{id}/edit')
+               ->name('LOWER_SERVICE.LOWER_NAME.edit')
+               ->uses('CLASS@edit');
+        $router->post('{id}/edit')
+               ->name('LOWER_SERVICE.LOWER_NAME.edit')
+               ->uses('CLASS@update');
+
+        $router->delete('{id}/destroy')
+               ->name('LOWER_SERVICE.LOWER_NAME.destroy')
+               ->uses('CLASS@destroy');
+
+        $router->get('/')
+               ->name('LOWER_SERVICE.LOWER_NAME.index')
+               ->uses('CLASS@index');
+    }
+}

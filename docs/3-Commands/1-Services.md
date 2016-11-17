@@ -37,3 +37,14 @@ This will list all currently registered services.
 ```
 
 > All apps start with the `root` service being set up.
+
+## Scaffold
+
+`php artisan service:scaffold <service name> <controller name> --crud --single-action`
+
+The scaffold command aims to get you up and running with a new page quickly.  It creates a controller and a route file with 
+the name supplied.  If you don't add any options, it will create the files without any methods or routes predefined.
+
+The `--crud` option will add the 7 common CRUD methods to your controller and the 7 routes to your route file.
+
+The `--single-action` option will create a controller with only the `__invoke` method and a single route in the route file.
