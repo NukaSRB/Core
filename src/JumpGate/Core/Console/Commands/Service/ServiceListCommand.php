@@ -1,6 +1,6 @@
 <?php
 
-namespace JumpGate\Core\Console\Commands;
+namespace JumpGate\Core\Console\Commands\Service;
 
 class ServiceListCommand extends ServiceCommand
 {

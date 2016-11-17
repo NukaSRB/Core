@@ -1,6 +1,6 @@
 <?php
 
-namespace JumpGate\Core\Console\Commands;
+namespace JumpGate\Core\Console\Commands\Service;
 
 use Illuminate\Console\Command;
 use Illuminate\Filesystem\Filesystem;
