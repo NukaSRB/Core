@@ -1,6 +1,6 @@
 <?php
 
-namespace JumpGate\Core\View;
+namespace NukaCode\Core\View;
 
 use Illuminate\Config\Repository;
 use Illuminate\View\Factory;
@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 
 class Layout
 {
+
     public $layout;
 
     protected $view;
@@ -89,11 +90,9 @@ class Layout
         if (! is_array($layoutOptions)) {
             throw new \InvalidArgumentException('The layoutOptions must be an array.');
         }
-
         if (! isset($layoutOptions['default'])) {
             throw new \InvalidArgumentException('The layoutOptions must have a default layout view.');
         }
-
         if (! isset($layoutOptions['ajax'])) {
             throw new \InvalidArgumentException('The layoutOptions must have a ajax layout view.');
         }
