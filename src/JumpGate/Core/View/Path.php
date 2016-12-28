@@ -1,11 +1,11 @@
 <?php
 
-namespace JumpGate\Core\View;
+namespace NukaCode\Core\View;
 
 use Illuminate\Routing\Router;
 use Illuminate\View\Factory;
 use Illuminate\View\View;
-use JumpGate\Core\View\Models\ViewModel;
+use NukaCode\Core\View\Models\ViewModel;
 
 class Path
 {
@@ -36,9 +36,15 @@ class Path
 
     protected function setPath($view)
     {
+        $this->viewModel = new ViewModel();
+
         if ($view == null) {
             $view = $this->findView();
+        } else {
+            $this->viewModel->view = $view;
         }
+
+        viewBuilder()->collectDetails($this->viewModel);
 
         $this->path = $view;
     }
@@ -84,8 +90,12 @@ class Path
 
             // Check for a configured view route.
             if (! is_null($configView = $this->viewModel->checkConfig())) {
+                $this->viewModel->type = 'config';
+
                 return $configView;
             }
+
+            $this->viewModel->type = 'auto';
 
             return $this->viewModel->getView();
         }
