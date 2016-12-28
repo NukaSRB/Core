@@ -126,7 +126,7 @@ class ServiceScaffoldCommand extends ServiceCommand
      */
     private function addNewRoute($service, $controller)
     {
-        $routes = collect($service->routes);
+        $routes = isset($service->routes) ? collect($service->routes) : collect();
         $routes->push('\\' . $service->namespace . '\Http\Routes\\' . $controller);
 
         $service->routes = $routes->unique()->toArray();
