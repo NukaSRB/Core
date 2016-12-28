@@ -1,6 +1,6 @@
 <?php
 
-namespace NukaCode\Core\View;
+namespace JumpGate\Core\View;
 
 use Illuminate\View\Factory;
 
@@ -11,18 +11,18 @@ class ViewBuilder
     public $view;
 
     /**
-     * @var \NukaCode\Core\View\Layout
+     * @var \JumpGate\Core\View\Layout
      */
     protected $viewLayout;
 
     /**
-     * @var \NukaCode\Core\View\Path
+     * @var \JumpGate\Core\View\Path
      */
     protected $viewPath;
 
     /**
-     * @param \NukaCode\Core\View\Layout $viewLayout
-     * @param \NukaCode\Core\View\Path   $viewPath
+     * @param \JumpGate\Core\View\Layout $viewLayout
+     * @param \JumpGate\Core\View\Path   $viewPath
      * @param \Illuminate\View\Factory   $view
      */
     public function __construct(Layout $viewLayout, Path $viewPath, Factory $view)
@@ -143,7 +143,7 @@ class ViewBuilder
     /**
      * Pass the view resolution details to the debugbar collector.
      *
-     * @param \NukaCode\Core\View\Models\ViewModel $viewModel
+     * @param \JumpGate\Core\View\Models\ViewModel $viewModel
      */
     public function collectDetails($viewModel)
     {
