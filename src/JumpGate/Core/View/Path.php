@@ -1,11 +1,11 @@
 <?php
 
-namespace NukaCode\Core\View;
+namespace JumpGate\Core\View;
 
 use Illuminate\Routing\Router;
 use Illuminate\View\Factory;
 use Illuminate\View\View;
-use NukaCode\Core\View\Models\ViewModel;
+use JumpGate\Core\View\Models\ViewModel;
 
 class Path
 {
