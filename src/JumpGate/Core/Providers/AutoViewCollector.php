@@ -4,12 +4,12 @@ namespace JumpGate\Core\Providers;
 
 use DebugBar\Bridge\Twig\TwigCollector;
 use DebugBar\DataCollector\Renderable;
-use NukaCode\Core\View\Models\ViewModel;
+use JumpGate\Core\View\Models\ViewModel;
 
 class AutoViewCollector extends TwigCollector implements Renderable
 {
     /**
-     * @var null|\NukaCode\Core\View\Models\ViewModel
+     * @var null|\JumpGate\Core\View\Models\ViewModel
      */
     public $viewModel = null;
 
