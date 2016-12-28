@@ -1,6 +1,6 @@
 <?php
 
-namespace JumpGate\Core\View;
+namespace NukaCode\Core\View;
 
 use Illuminate\View\Factory;
 
@@ -11,18 +11,18 @@ class ViewBuilder
     public $view;
 
     /**
-     * @var \JumpGate\Core\View\Layout
+     * @var \NukaCode\Core\View\Layout
      */
     protected $viewLayout;
 
     /**
-     * @var \JumpGate\Core\View\Path
+     * @var \NukaCode\Core\View\Path
      */
     protected $viewPath;
 
     /**
-     * @param \JumpGate\Core\View\Layout $viewLayout
-     * @param \JumpGate\Core\View\Path   $viewPath
+     * @param \NukaCode\Core\View\Layout $viewLayout
+     * @param \NukaCode\Core\View\Path   $viewPath
      * @param \Illuminate\View\Factory   $view
      */
     public function __construct(Layout $viewLayout, Path $viewPath, Factory $view)
@@ -130,8 +130,29 @@ class ViewBuilder
         return $this->viewPath->path;
     }
 
+    /**
+     * Return the details of the view resolution for troubleshooting.
+     *
+     * @return mixed
+     */
     public function debug()
     {
         return $this->viewPath->viewModel;
+    }
+
+    /**
+     * Pass the view resolution details to the debugbar collector.
+     *
+     * @param \NukaCode\Core\View\Models\ViewModel $viewModel
+     */
+    public function collectDetails($viewModel)
+    {
+        if (app()->environment('local') || request('debug') == true) {
+            $debugbar = app('debugbar');
+
+            if ($debugbar->shouldCollect('auto_views')) {
+                $debugbar['auto_views']->addDetails($viewModel);
+            }
+        }
     }
 }
