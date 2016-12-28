@@ -19,6 +19,14 @@ class ViewServiceProvider extends ServiceProvider
         $this->app->singleton('viewBuilder', function ($app) {
             return $app->make(ViewBuilder::class);
         });
+        
+        
+        if ($this->app->environment('local') || request('debug') == true) {
+            $debugbar = $this->app['debugbar'];
+            if ($debugbar->shouldCollect('auto_views')) {
+                $debugbar->addCollector(new AutoViewCollector());
+            }
+        }
     }
 
     public function boot()
