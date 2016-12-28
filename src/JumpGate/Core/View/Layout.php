@@ -1,6 +1,6 @@
 <?php
 
-namespace NukaCode\Core\View;
+namespace JumpGate\Core\View;
 
 use Illuminate\Config\Repository;
 use Illuminate\View\Factory;
