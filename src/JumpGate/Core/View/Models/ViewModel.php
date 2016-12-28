@@ -1,6 +1,6 @@
 <?php
 
-namespace NukaCode\Core\View\Models;
+namespace JumpGate\Core\View\Models;
 
 use Illuminate\Support\Collection;
 use ReflectionClass;
