@@ -1,6 +1,6 @@
 <?php
 
-namespace NukaCode\Core\Providers;
+namespace JumpGate\Core\Providers;
 
 use DebugBar\Bridge\Twig\TwigCollector;
 use DebugBar\DataCollector\Renderable;
