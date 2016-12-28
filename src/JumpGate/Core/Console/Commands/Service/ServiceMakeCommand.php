@@ -72,7 +72,7 @@ class ServiceMakeCommand extends ServiceCommand
         return (object)[
             'name'      => $name,
             'lower'     => Str::snake($this->argument('name'), '-'),
-            'namespace' => 'JumpGate\Core\Services\\' . $name,
+            'namespace' => 'App\Services\\' . $name,
             'path'      => 'app/Services/' . $name,
         ];
     }
