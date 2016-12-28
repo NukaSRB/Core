@@ -37,7 +37,7 @@ class ServiceMakeCommand extends ServiceCommand
         $this->checkForService($config, $name);
 
         // Add the service to the config.
-        $config->add($this->generateService($name));
+        $config->push($this->generateService($name));
 
         // Add any directories that don't exist but need to.
         $this->makeDirectory($config->last());
