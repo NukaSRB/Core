@@ -11,8 +11,6 @@ abstract class Seeder extends \Illuminate\Database\Seeder
     
     public function __construct()
     {
-        parent::__construct();
-
         $this->db = app('db');
     }
     
