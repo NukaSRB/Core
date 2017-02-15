@@ -2,6 +2,8 @@
 
 namespace JumpGate\Core\Abstracts;
 
+use Illuminate\Support\Facades\DB;
+
 abstract class Seeder extends \Illuminate\Database\Seeder
 {
     protected function truncate($table)
