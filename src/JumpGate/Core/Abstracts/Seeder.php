@@ -2,7 +2,7 @@
 
 namespace JumpGate\Core\Abstracts;
 
-use Illuminate\Support\Facades\DB;
+use Illuminate\Database\DatabaseManager;
 
 abstract class Seeder extends \Illuminate\Database\Seeder
 {
