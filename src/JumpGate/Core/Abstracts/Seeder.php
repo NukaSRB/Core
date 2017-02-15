@@ -2,8 +2,6 @@
 
 namespace JumpGate\Core\Abstracts;
 
-use Illuminate\Database\DatabaseManager;
-
 abstract class Seeder extends \Illuminate\Database\Seeder
 {
     /**
@@ -11,15 +9,11 @@ abstract class Seeder extends \Illuminate\Database\Seeder
      */
     protected $db;
     
-    /**
-     * @param \Illuminate\Database\DatabaseManager $db
-     * @param \Illuminate\Filesystem\Filesystem    $files
-     */
-    public function __construct(DatabaseManager $db)
+    public function __construct()
     {
         parent::__construct();
 
-        $this->db = $db;
+        $this->db = app('db');
     }
     
     /**
