@@ -19,7 +19,7 @@ abstract class Seeder extends \Illuminate\Database\Seeder
     {
         parent::__construct();
 
-        $this->db    = $db;
+        $this->db = $db;
     }
     
     /**
@@ -29,10 +29,10 @@ abstract class Seeder extends \Illuminate\Database\Seeder
      */
     protected function truncate($table)
     {
-        if ($this-db->connection()->getConfig('driver') === 'mysql') {
-            $this-db->statement('SET FOREIGN_KEY_CHECKS=0;');
-            $this-db->table($table)->truncate();
-            $this-db->statement('SET FOREIGN_KEY_CHECKS=1;');
+        if ($this->db->connection()->getConfig('driver') === 'mysql') {
+            $this->db->statement('SET FOREIGN_KEY_CHECKS=0;');
+            $this->db->table($table)->truncate();
+            $this->db->statement('SET FOREIGN_KEY_CHECKS=1;');
         }
     }
 }
